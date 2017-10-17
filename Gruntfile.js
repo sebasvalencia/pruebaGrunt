@@ -23,18 +23,21 @@ module.exports = function(grunt){
 
 
     grunt.initConfig({
+        outdir: 'dist',
         concat: {
             css:{
                 src: ['css/main.css', 'css/theme.css'],
-                dest: 'css/style.css'
-            }
-        },
-        js:{
-            options:{
-                separator:';'
+                //dest: 'css/style.css'
+                dest: '<%= outdir %>/css/style.css'
             },
-            src:['js/archivo1.js','js/archivo2.js'],
-            dest: 'js.bundle.js'
+            js: {
+                options:{
+                    separator:';'
+                },
+                src:['js/archivo1.js','js/archivo2.js'],
+                //dest: 'js.bundle.js'
+                dest: '<%= outdir %>/js/bundle.js'
+            }
         },
         uglify:{
             options:{
@@ -42,7 +45,8 @@ module.exports = function(grunt){
             },
             build:{
                 src:['js/bundle.js'],
-                dest:'js/script.js'
+                //dest:'js/script.js'
+                dest: '<%= outdir %>/js/script.js'
             }
         }
     });

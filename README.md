@@ -81,14 +81,14 @@ grunt.initConfig({
             css:{
                 src: ['css/main.css', 'css/theme.css'],
                 dest: 'css/style.css'
-            }
-        },
-        js:{
-            options:{
-                separator:';'
             },
-            src:['js/archivo1.js','js/archivo2.js'],
-            dest: 'js.bundle.js'
+            js:{
+                options:{
+                    separator:';'
+                },
+                src:['js/archivo1.js','js/archivo2.js'],
+                dest: 'js.bundle.js'
+            }
         }
     });
 ```
@@ -97,6 +97,7 @@ para probar la tarea:
 grunt concat
 ```
 
+* Se Puede crear plantillas y directorios de salida.
 
 
 
