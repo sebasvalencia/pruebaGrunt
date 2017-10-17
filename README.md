@@ -50,9 +50,45 @@ Se definen en tres partes:
         grunt.registerTask('default', ['tarea1']);
 ```
 
+* Vamos a definir dos tareas:
+1. Concatenar archivos css y js
+2. Comprimir arhciovs js 
 
+Instalamos los plugins:
+```
+npm install --save grunt-contrib-concat
+npm install --save grunt-contrib-uglify
+```
 
+Primero cargamos los plugins:
+```javascript
+//concat
+grunt.loadNpmTasks('grunt-contrib-concat');
 
+//uglify
+grunt.loadNpmTasks('grunt-contrib-uglify');
+```
+* La mayoria de tareas hacen 3 cosas:
+
+1. Leen un conjunto de archivos de entrada
+2. Procesan estos archivos
+3. Escriben un conjunto de archivos de salida
+
+* Creamos la tarea __concatenar__:
+```javascript
+grunt.initConfig({
+        concat: {
+            css:{
+                src: ['css/main.css', 'css/theme.css'],
+                dest: 'css/style.css'
+            }
+        }
+    });
+```
+para probar la tarea:
+```
+grunt concat
+```
 
 
 

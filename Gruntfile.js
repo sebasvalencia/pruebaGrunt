@@ -22,5 +22,18 @@ module.exports = function(grunt){
     */
 
 
+    grunt.initConfig({
+        concat: {
+            css:{
+                src: ['css/main.css', 'css/theme.css'],
+                dest: 'css/style.css'
+            }
+        }
+    });
+        
+
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+
 
 };
