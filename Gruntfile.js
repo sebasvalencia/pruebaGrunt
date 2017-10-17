@@ -28,6 +28,22 @@ module.exports = function(grunt){
                 src: ['css/main.css', 'css/theme.css'],
                 dest: 'css/style.css'
             }
+        },
+        js:{
+            options:{
+                separator:';'
+            },
+            src:['js/archivo1.js','js/archivo2.js'],
+            dest: 'js.bundle.js'
+        },
+        uglify:{
+            options:{
+                mangle:false
+            },
+            build:{
+                src:['js/bundle.js'],
+                dest:'js/script.js'
+            }
         }
     });
         
