@@ -99,6 +99,18 @@ grunt concat
 
 * Se Puede crear plantillas y directorios de salida.
 
-
-
+* Se coloca por último la tarea por defecto:
+```javascript
+grunt.registerTask('default', ['concat', 'uglify']);
+```
+Se puede ejecutar tareas concretas o subtareas:
+```
+grunt concat
+grunt uglify 
+grunt concat:css
+```
+Se ejecuta en la consola y listo:
+```
+ grunt
+```
 

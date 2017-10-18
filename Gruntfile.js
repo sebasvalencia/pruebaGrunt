@@ -1,3 +1,4 @@
+'use strict';
 module.exports = function(grunt){
     //Aca va la definición y configuración de tareas
     /*
@@ -21,7 +22,6 @@ module.exports = function(grunt){
 
     */
 
-
     grunt.initConfig({
         outdir: 'dist',
         concat: {
@@ -44,7 +44,7 @@ module.exports = function(grunt){
                 mangle:false
             },
             build:{
-                src:['js/bundle.js'],
+                src:['<%= outdir %>/js/bundle.js'],
                 //dest:'js/script.js'
                 dest: '<%= outdir %>/js/script.js'
             }
@@ -55,5 +55,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
+    //definimos cual es la tarea por defecto:
+    grunt.registerTask('default', ['concat','uglify']);
 
 };
